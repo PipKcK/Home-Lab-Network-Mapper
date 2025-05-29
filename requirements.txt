@@ -1,0 +1,26 @@
+# Required packages for Network Scanner & Mapper
+# Install with: pip install -r requirements.txt
+
+# Optional but recommended for advanced scanning
+python-nmap>=1.6.0
+
+# Optional for network packet analysis
+scapy>=2.4.5
+
+# Optional for creating network maps
+matplotlib>=3.5.0
+
+# Optional for enhanced network analysis
+networkx>=2.8.0
+
+# Standard library packages (already included with Python):
+# - subprocess
+# - socket
+# - ipaddress
+# - threading  
+# - time
+# - re
+# - json
+# - concurrent.futures
+# - dataclasses
+# - typing

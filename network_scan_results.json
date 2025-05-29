@@ -1,0 +1,50 @@
+{
+  "scan_info": {
+    "network_range": "192.168.0.0/24",
+    "router_ip": "192.168.0.1",
+    "scan_time": "2025-05-29 14:59:06",
+    "device_count": 3
+  },
+  "devices": [
+    {
+      "ip": "192.168.0.100",
+      "mac": "",
+      "hostname": "MavenPCX",
+      "device_type": "Windows PC",
+      "os": "Windows",
+      "manufacturer": "",
+      "open_ports": [
+        135,
+        139,
+        445,
+        3389
+      ],
+      "is_router": false
+    },
+    {
+      "ip": "192.168.0.1",
+      "mac": "20-23-51-70-0a-c0",
+      "hostname": "",
+      "device_type": "Router",
+      "os": "Windows",
+      "manufacturer": "",
+      "open_ports": [
+        22,
+        53,
+        80,
+        1900
+      ],
+      "is_router": true
+    },
+    {
+      "ip": "192.168.0.101",
+      "mac": "aa-6d-55-90-5d-db",
+      "hostname": "",
+      "device_type": "Mobile Device",
+      "os": "Unknown Mobile",
+      "manufacturer": "",
+      "open_ports": [],
+      "is_router": false
+    }
+  ]
+}
