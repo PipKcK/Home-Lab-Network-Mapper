@@ -10,6 +10,7 @@ import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List
 import nmap
+import configparser
 
 from network_device import NetworkDevice
 from network_utils import (
@@ -156,18 +157,28 @@ class NetworkScanner:
         
         return self.devices
 
+    def load_known_devices(self, config_path="config.ini"):
+        config = configparser.ConfigParser()
+        config.read(config_path)
+        known_devices = {}
+
+        for ip in config.sections():
+            expected_type = config[ip].get("expected_type", "Unknown")
+            expected_os = config[ip].get("expected_os", "Unknown")
+            known_devices[ip] = {
+                "expected_type": expected_type,
+                "expected_os": expected_os
+            }
+
+        return known_devices
+
     def test_known_devices(self):
         """Test specific known devices for verification"""
         print("\n" + "="*60)
         print("TESTING KNOWN DEVICES")
         print("="*60)
         
-        known_devices = {
-            "192.168.0.1": {"expected_type": "Router", "expected_os": "Router OS"},
-            "192.168.0.100": {"expected_type": "Windows PC", "expected_os": "Windows"},
-            "192.168.0.101": {"expected_type": "Android Device", "expected_os": "Android"},
-            "192.168.0.102": {"expected_type": "Windows PC", "expected_os": "Windows"}
-        }
+        known_devices = self.load_known_devices()
         
         for ip, expected in known_devices.items():
             print(f"\nTesting {ip}...")
