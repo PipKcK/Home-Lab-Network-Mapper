@@ -276,7 +276,7 @@ class NetworkScanner:
             print(f"{marker}{device.ip:<13} {device.device_type:<15} {device.os:<12} "
                   f"{device.hostname[:19]:<20} {device.mac:<18} {ports_str}")
 
-    def export_results(self, filename: str = "network_scan_results.json"):
+    def export_results(self, filename: str = "info/scan_results.json"):
         """Export scan results to JSON file"""
         if not self.devices:
             print("No devices to export!")
