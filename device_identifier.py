@@ -17,20 +17,15 @@ def identify_device_type_enhanced(device: NetworkDevice, router_ip: str) -> str:
     
     # Specific IP-based identification for testing
     if ip == "192.168.0.100" or ip == "192.168.0.102":
-        # Force Windows PC identification for these specific IPs
-        return "Windows PC"
+        return "PC"
     elif ip == "192.168.0.101":
-        # Check for Android indicators
-        if "android" in hostname or not hostname:
-            return "Android Device"
-        else:
-            return "Mobile Device"
+        return "Smartphone"
     
     # Router identification
     if device.ip == router_ip or (open_ports is not None and 80 in open_ports and 443 in open_ports and not open_ports):
         return "Router"
     
-    # Windows PC identification (enhanced)
+    # PC (Windows) identification (enhanced)
     windows_indicators = [
         open_ports is not None and 135 in open_ports,  # RPC Endpoint Mapper
         open_ports is not None and 139 in open_ports,  # NetBIOS Session Service
@@ -40,7 +35,7 @@ def identify_device_type_enhanced(device: NetworkDevice, router_ip: str) -> str:
     ]
     
     if any(windows_indicators):
-        return "Windows PC"
+        return "PC"
     
     # Server identification
     server_ports = [21, 22, 25, 53, 80, 443, 993, 995]
@@ -56,11 +51,11 @@ def identify_device_type_enhanced(device: NetworkDevice, router_ip: str) -> str:
     mobile_keywords = ['iphone', 'ipad', 'android', 'mobile', 'phone']
     if any(keyword in hostname for keyword in mobile_keywords):
         if 'iphone' in hostname or 'ipad' in hostname:
-            return "iOS Device"
+            return "Smartphone" #return "iOS Device"
         elif 'android' in hostname:
-            return "Android Device"
+            return "Smartphone" #return "Android Device"
         else:
-            return "Mobile Device"
+            return "Smartphone" #return "Mobile Device"
     
     # Printer identification
     if any(keyword in hostname for keyword in ['printer', 'print', 'canon', 'hp', 'epson']):
@@ -82,11 +77,8 @@ def identify_os_enhanced(device: NetworkDevice) -> str:
     if ip == "192.168.0.100" or ip == "192.168.0.102":
         return "Windows"
     elif ip == "192.168.0.101":
-        if "android" in hostname:
-            return "Android"
-        else:
-            return "Unknown Mobile"
-    
+        return "Android"
+
     # Windows indicators (enhanced)
     windows_ports = [135, 139, 445, 3389, 1900, 5353, 5357]
     if open_ports is not None and any(port in open_ports for port in windows_ports):

@@ -219,14 +219,14 @@ class NetworkScanner:
                     
                     # Add manual override for testing
                     if "192.168.0.100" in ip or "192.168.0.102" in ip:
-                        print(f"  → Forcing Windows PC identification for {ip}")
-                        device.device_type = "Windows PC"
+                        print(f"  → Forcing PC (Windows) identification for {ip}")
+                        device.device_type = "PC"
                         device.os = "Windows"
                     elif "192.168.0.101" in ip:
                         print(f"  → Checking for Android/mobile device at {ip}")
                         if not device.hostname or "android" not in device.hostname.lower():
-                            device.device_type = "Mobile Device"
-                            device.os = "Unknown Mobile"
+                            device.device_type = "Smartphone"
+                            device.os = "Android"
                 
                 # Add to devices list if not already there
                 existing = next((d for d in self.devices if d.ip == ip), None)

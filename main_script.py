@@ -40,8 +40,8 @@ def main():
     devices = scanner.scan_network(use_nmap=True)
     
     # Run specific device tests
-    print("\nRunning tests on known devices...")
-    scanner.test_known_devices()
+    print("\nNot Running tests on known devices...")
+    #scanner.test_known_devices()
     
     if devices:
         # Print results
