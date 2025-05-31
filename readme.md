@@ -225,7 +225,7 @@ self.common_ports = [21, 22, 23, 25, 53, 80, 110, 135, 139, 143, 443, 993, 995, 
 ## 🔮 TODO
 
 ### High Priority
-- [ ] **Dynamic Wi-Fi Interface Detection**: Implement automatic interface detection using `tshark -D` command
+- [*] **Dynamic Wi-Fi Interface Detection**: Implement automatic interface detection using `tshark -D` command
 - [ ] **Enhanced Dashboard Features**: 
   - [ ] Historical data visualization
   - [ ] Advanced filtering options

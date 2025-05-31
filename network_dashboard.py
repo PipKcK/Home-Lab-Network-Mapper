@@ -6,6 +6,9 @@ import logging
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import subprocess
+import re
+
 from flask import Flask, render_template, jsonify, request
 from flask_socketio import SocketIO, emit
 
@@ -30,6 +33,29 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 # -------------------------------
 monitor = NetworkMonitor(db_path="network_monitor.db")
 snort = SnortIntegration(snort_log_path="/var/log/snort/alert")
+
+
+# -------------------------------
+# Function to get the Wi-Fi interface using tshark
+# -------------------------------
+def get_wifi_interface():
+    try:
+        # Run tshark -D to list all interfaces
+        result = subprocess.run(['tshark', '-D'], capture_output=True, text=True, check=True)
+        lines = result.stdout.strip().split('\n')
+
+        for line in lines:
+            # Look for line containing '(Wi-Fi)' or similar
+            if '(Wi-Fi)' in line:
+                # Extract the device name before the first space
+                match = re.match(r'\d+\.\s+([^\s]+)', line)
+                if match:
+                    return match.group(1)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running tshark: {e}")
+        print("Defaulting to 'wlan0' if available.")
+
+    return 'wlan0'
 
 # -------------------------------
 # Load devices from scan_results.json on startup
@@ -199,7 +225,8 @@ def handle_start_monitoring(data):
     Front-end can trigger this event (via: socket.emit('start_monitoring', { interface: 'eth0' }))
     to begin packet capture on the specified interface.
     """
-    interface = data.get('interface', r'\Device\NPF_{E4D75602-5B8B-4765-8BED-488B492886BA}')
+    recwifi_interface = get_wifi_interface()
+    interface = data.get('interface', recwifi_interface)
     monitor.start_monitoring(interface)
     emit('monitoring_started', {'interface': interface})
     emit('status', {'msg': f'Monitoring started on {interface}'})
