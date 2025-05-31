@@ -74,7 +74,7 @@ def main():
             print("5. Start Dashboard")
             print("6. Exit")
             
-            choice = input("\nEnter your choice (1-5): ").strip()
+            choice = input("\nEnter your choice (1-6): ").strip()
             
             if choice == '1':
                 print("Rescanning network...")

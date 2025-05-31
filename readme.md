@@ -1,144 +1,267 @@
-# Network Scanner & Mapper
+# 🛡️ Home Lab Network Scanner & Mapper
 
-A comprehensive Python tool to scan your local network, identify devices, and create visual network maps.
+A comprehensive Python-based network scanning and monitoring tool designed for home lab environments. This tool provides device discovery, real-time network monitoring, and a web-based security dashboard.
 
-## Features
+## 🚀 Features
 
-- **Network Discovery**: Automatically detects your network range and router
-- **Device Identification**: Identifies device types (Windows PC, mobile devices, servers, etc.)
-- **OS Detection**: Attempts to identify operating systems based on network characteristics
-- **Port Scanning**: Scans common ports to identify services
-- **Visual Mapping**: Creates visual network topology maps
-- **Multiple Scan Methods**: Supports both basic ping scanning and advanced nmap scanning
-- **Export Results**: Save scan results to JSON files
+### Network Scanning
+- **Device Discovery**: Automatically discovers devices on your local network
+- **Enhanced Identification**: Identifies device types (PC, Smartphone, Router) and operating systems
+- **Port Scanning**: Detects open ports and services on discovered devices
+- **Nmap Integration**: Optional advanced scanning capabilities with python-nmap
 
-## Installation
+### Real-Time Monitoring
+- **Live Packet Capture**: Real-time network traffic analysis using Scapy
+- **Protocol Statistics**: Track HTTP, HTTPS, DNS, TCP, UDP traffic
+- **Bandwidth Monitoring**: Monitor network usage and top talkers
+- **Intrusion Detection**: Basic security alerts for suspicious activity
 
-1. **Clone or download the files** to a directory on your computer:
+### Web Dashboard
+- **Interactive Interface**: Flask-based web dashboard with real-time updates
+- **Visual Analytics**: Charts and graphs for network statistics
+- **Device Management**: View and manage discovered network devices
+- **Security Alerts**: Display and track security events
+
+## 🎯 Supported Devices
+
+Currently recognizes and identifies:
+- **PCs**: Windows, Linux, macOS computers
+- **Smartphones**: Android and iOS devices
+- **Routers**: Network gateway devices
+- **Servers**: Web servers, Linux servers
+- **Printers**: Network-connected printers
+
+## 🔧 Requirements
+
+### System Requirements
+- **Operating System**: Windows (primary support)
+- **Network**: LAN network on 192.168.x.x range
+- **Connection**: Wi-Fi connection recommended
+- **Python**: Python 3.7 or higher
+
+### Dependencies
+Install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+#### Core Dependencies
+- `python-nmap>=1.6.0` - Advanced network scanning
+- `scapy>=2.4.5` - Packet capture and analysis
+- `flask` - Web dashboard framework
+- `flask-socketio` - Real-time web updates
+- `psutil` - System monitoring
+- `matplotlib>=3.5.0` - Network visualization (optional)
+- `networkx>=2.8.0` - Network analysis (optional)
+
+## 🚀 Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd network-scanner-mapper
    ```
-   network_scanner/
-   ├── main.py
-   ├── network_scanner.py
-   ├── network_device.py
-   ├── network_utils.py
-   ├── device_identifier.py
-   ├── network_mapper.py
-   ├── requirements.txt
-   └── README.md
-   ```
 
-2. **Install Python dependencies** (optional but recommended):
+2. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-   **Note**: The scanner will work with just Python's standard library, but installing the optional packages enables additional features:
-   - `python-nmap`: Advanced scanning capabilities
-   - `scapy`: Enhanced network packet analysis
-   - `matplotlib`: Visual network maps
-   - `networkx`: Network topology analysis
+3. **Install Nmap** (optional but recommended):
+   - Download from [nmap.org](https://nmap.org/download.html)
+   - Add to system PATH
 
-## Usage
+4. **Configure known devices** (optional):
+   ```bash
+   cp known_devices.ini.example known_devices.ini
+   # Edit known_devices.ini with your device information
+   ```
 
-### Basic Usage
+## 🎮 Usage
+
+### Basic Network Scan
 
 Run the main script:
 ```bash
-python main.py
+python main_script.py
 ```
 
-### What It Does
+The tool will:
+1. Auto-detect your network range and router IP
+2. Scan for active devices
+3. Identify device types and operating systems
+4. Display results in a formatted table
+5. Export results to JSON
 
-1. **Auto-detects your network** (e.g., 192.168.1.0/24)
-2. **Scans for live devices** using ping or nmap
-3. **Identifies device types** based on:
-   - Open ports
-   - Hostnames
-   - Network behavior
-4. **Creates a visual map** (if matplotlib is installed)
-5. **Exports results** to JSON
+### Interactive Menu Options
 
-### Sample Output
+After scanning, choose from:
+1. **Rescan network** - Perform a fresh network scan
+2. **Test known devices** - Verify specific device identification
+3. **Create network map** - Generate visual network topology
+4. **Export results** - Save scan data to JSON file
+5. **Start Dashboard** - Launch web-based monitoring interface
+6. **Exit** - Close the application
 
-```
-Network detected: 192.168.1.0/24
-Router IP: 192.168.1.1
-Scanning network: 192.168.1.0/24
-Found device: 192.168.1.1
-Found device: 192.168.1.100
-Found device: 192.168.1.101
+### Web Dashboard
 
-NETWORK SCAN RESULTS - 3 devices found
-Network: 192.168.1.0/24
-Router: 192.168.1.1
-================================================================================
-IP Address      Device Type     OS           Hostname             MAC Address        Ports
---------------- --------------- ------------ -------------------- ------------------ ----------
-🌐 192.168.1.1   Router          Router OS    router.local         aa:bb:cc:dd:ee:ff  80,443
-   192.168.1.100 Windows PC      Windows      DESKTOP-ABC123       11:22:33:44:55:66  135,139,445
-   192.168.1.101 Android Device  Android      android-phone        77:88:99:aa:bb:cc  
+Launch the dashboard:
+```bash
+python network_dashboard.py
 ```
 
-## File Structure
+Or use option 5 from the main menu.
 
-- **`main.py`**: Main entry point and user interface
-- **`network_scanner.py`**: Core scanning functionality
-- **`network_device.py`**: Device data model
-- **`network_utils.py`**: Network utility functions (ping, hostname lookup, etc.)
-- **`device_identifier.py`**: Device type and OS identification logic
-- **`network_mapper.py`**: Visual network mapping functionality
-- **`requirements.txt`**: Optional Python dependencies
+Access at: `http://localhost:5000`
 
-## Requirements
+Dashboard features:
+- Real-time traffic monitoring
+- Protocol distribution charts
+- Security alerts
+- Device inventory
+- Top talkers analysis
 
-- **Python 3.7+**
-- **Windows/Linux/macOS** (tested on Windows)
-- **Network access** to scan local subnet
+## 📁 Project Structure
 
-### Optional Dependencies
+```
+├── main_script.py           # Main application entry point
+├── network_scanner.py       # Core scanning functionality
+├── network_device.py        # Device data model
+├── device_identifier.py     # Device type identification logic
+├── network_utils.py         # Network utility functions
+├── network_dashboard.py     # Web dashboard application
+├── network_monitor.py       # Real-time monitoring engine
+├── network_mapper.py        # Network visualization (in development)
+├── snort_integration.py     # Snort IDS integration
+├── requirements.txt         # Python dependencies
+└── templates/
+    └── dashboard.html       # Web dashboard template
+```
 
-Install with `pip install -r requirements.txt`:
+## 🔧 Configuration
 
-- **python-nmap**: For advanced port scanning
-- **scapy**: For enhanced network analysis  
-- **matplotlib**: For creating visual network maps
-- **networkx**: For network topology analysis
+### Network Configuration
+The tool auto-detects network settings, but you can manually configure:
 
-## Troubleshooting
+```python
+# Manual network configuration in main_script.py
+router_ip = "192.168.0.1"
+network_range = "192.168.0.0/24"
+```
 
-### No devices found
-- Run as administrator/root for better network access
-- Check if Windows Firewall is blocking ping
-- Verify your network configuration
-- Try manual network configuration when prompted
+### Known Devices Configuration
+Create `known_devices.ini` to test specific devices:
 
-### Permission errors
-- On Windows: Run Command Prompt as Administrator
-- On Linux/Mac: Use `sudo python main.py`
+```ini
+[192.168.0.100]
+expected_type = PC
+expected_os = Windows
 
-### Import errors
-- The basic scanner works without optional dependencies
-- Install packages individually: `pip install python-nmap matplotlib`
+[192.168.0.101]
+expected_type = Smartphone
+expected_os = Android
+```
 
-## Security Notes
+### Port Configuration
+Modify common ports in `network_scanner.py`:
 
-- This tool only scans your local network
-- It uses standard network protocols (ping, TCP connections)
-- No intrusive scanning or exploitation attempts
-- Respects network security and firewall settings
+```python
+self.common_ports = [21, 22, 23, 25, 53, 80, 110, 135, 139, 143, 443, 993, 995, 8080]
+```
 
-## Customization
+## 📊 Output Files
 
-You can modify the scanning behavior by editing:
+- `info/scan_results.json` - Complete scan results
+- `network_monitor.db` - SQLite database for monitoring data
+- `network_map.png` - Visual network map (when implemented)
+- `flask_dashboard.log` - Dashboard application logs
 
-- **Port lists** in `network_scanner.py`
-- **Device identification rules** in `device_identifier.py`  
-- **Visual styling** in `network_mapper.py`
-- **Known test devices** in the `test_known_devices()` method
+## 🔒 Security Features
 
-## Example Use Cases
+### Intrusion Detection
+- Monitors for suspicious port activity
+- Tracks unusual traffic patterns
+- Generates security alerts
+- Logs all security events
 
-- **Home network mapping**: See all devices on your home WiFi
-- **IT network auditing**: Quick inventory of network devices
-- **Security assessment**: Identify unknown devices
-- **Network troubleshooting**: Verify device connectivity and services
+### Monitoring Capabilities
+- Real-time packet analysis
+- Protocol-based traffic classification
+- Bandwidth usage tracking
+- Top talkers identification
+
+## ⚠️ Limitations
+
+- **Platform**: Primarily designed for Windows environments
+- **Network**: Optimized for 192.168.x.x LAN networks
+- **Connection**: Best performance with Wi-Fi connections
+- **Device Types**: Limited to PC, Smartphone, and Router identification
+- **Interface**: Wi-Fi interface is currently hardcoded (see TODO)
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+1. **No devices found**:
+   - Check firewall settings
+   - Run as administrator
+   - Verify network connectivity
+
+2. **Nmap not working**:
+   - Install Nmap separately
+   - Add to system PATH
+   - Falls back to basic scanning automatically
+
+3. **Dashboard not accessible**:
+   - Check if port 5000 is available
+   - Verify Flask installation
+   - Check firewall rules
+
+4. **Packet capture fails**:
+   - Run as administrator
+   - Check network interface name
+   - Verify Scapy installation
+
+## 🔮 TODO
+
+### High Priority
+- [ ] **Dynamic Wi-Fi Interface Detection**: Implement automatic interface detection using `tshark -D` command
+- [ ] **Enhanced Dashboard Features**: 
+  - [ ] Historical data visualization
+  - [ ] Advanced filtering options
+  - [ ] Export capabilities for charts
+  - [ ] Real-time alerting system
+- [ ] **Comprehensive Testing**: 
+  - [ ] Test on different network configurations
+  - [ ] Validate device identification accuracy
+  - [ ] Performance testing with larger networks
+
+### Medium Priority
+- [ ] Cross-platform support (Linux, macOS)
+- [ ] Advanced device fingerprinting
+- [ ] Network topology visualization
+- [ ] API endpoints for external integration
+- [ ] Configuration file management
+- [ ] Docker containerization
+
+### Low Priority
+- [ ] Machine learning-based device classification
+- [ ] Integration with external threat intelligence
+- [ ] Mobile app companion
+- [ ] Cloud synchronization capabilities
+
+## 📝 License
+
+This project is intended for educational and home lab use. Please ensure compliance with local network monitoring regulations.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
+
+## 📞 Support
+
+For questions and support, please open an issue in the project repository.
+
+---
+
+**Note**: This tool is designed for legitimate network administration and security monitoring in environments you own or have explicit permission to monitor.
