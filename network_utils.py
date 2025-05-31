@@ -9,6 +9,8 @@ import socket
 import ipaddress
 import re
 from typing import List, Optional
+from scapy.all import srp
+from scapy.layers.l2 import ARP, Ether
 
 def get_network_info() -> tuple[str, str]:
     """
@@ -119,18 +121,24 @@ def get_hostname(ip: str) -> str:
         return ""
 
 def get_mac_address(ip: str) -> str:
-    """Get MAC address for IP (works best on local network)"""
+    """Attempts to get the MAC address using Scapy, falls back to ARP table lookup."""
     try:
-        # Windows ARP table lookup
+        answered = srp(Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst=ip), timeout=2, verbose=False)[0]
+        if answered:
+            return answered[0][1].hwsrc
+    except Exception as e:
+        print(f"Scapy MAC lookup failed for {ip}: {e}")
+
+    try:
         result = subprocess.run(['arp', '-a'], capture_output=True, text=True, shell=True)
         for line in result.stdout.split('\n'):
             if ip in line:
-                # Windows ARP format: IP (192.168.0.1) at aa-bb-cc-dd-ee-ff [ether] on interface
                 mac_match = re.search(r'([0-9a-fA-F]{2}[-:]){5}[0-9a-fA-F]{2}', line)
                 if mac_match:
                     return mac_match.group(0)
     except Exception as e:
-        print(f"MAC lookup failed for {ip}: {e}")
+        print(f"ARP table lookup failed for {ip}: {e}")
+
     return ""
 
 def scan_ports(ip: str, ports: List[int]) -> List[int]:

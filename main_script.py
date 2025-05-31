@@ -7,6 +7,22 @@ A comprehensive tool to scan local network, identify devices, and create a netwo
 import ipaddress
 from network_scanner import NetworkScanner
 from network_mapper import NetworkMapper
+import subprocess
+import signal
+
+flask_process = None
+
+def start_dashboard_background():
+    global flask_process
+    log_file = open("flask_dashboard.log", "w")  # Keep reference to avoid garbage collection
+
+    flask_process = subprocess.Popen(
+        ["python", "network_dashboard.py"],
+        stdout=log_file,
+        stderr=subprocess.STDOUT,
+        creationflags=subprocess.CREATE_NEW_PROCESS_GROUP  # Windows only
+    )
+
 
 def main():
     """Main function to run the network scanner"""
@@ -39,27 +55,9 @@ def main():
     print("\nStarting network scan...")
     devices = scanner.scan_network(use_nmap=True)
     
-    # Run specific device tests
-    print("\nNot Running tests on known devices...")
-    #scanner.test_known_devices()
-    
     if devices:
         # Print results
         scanner.print_results()
-        
-        # Create network map
-        print("\nCreating network map...")
-        try:
-            router_ip = scanner.router_ip if scanner.router_ip is not None else ""
-            network_range = scanner.network_range if scanner.network_range is not None else ""
-            mapper = NetworkMapper(scanner.devices, network_range, router_ip)
-            mapper.create_network_map()
-        except Exception as e:
-            print(f"Could not create network map: {e}")
-            # Print device info summary
-            print("Network Range:", scanner.network_range)
-            print("Router IP:", scanner.router_ip)
-            print("Devices:", scanner.devices)
         
         # Export results
         scanner.export_results()
@@ -73,7 +71,8 @@ def main():
             print("2. Test known devices")
             print("3. Create new network map")
             print("4. Export results")
-            print("5. Exit")
+            print("5. Start Dashboard")
+            print("6. Exit")
             
             choice = input("\nEnter your choice (1-5): ").strip()
             
@@ -103,6 +102,20 @@ def main():
                     filename = "network_scan_results.json"
                 scanner.export_results(filename)
             elif choice == '5':
+                print("Starting Dashboard...")
+                # Placeholder for dashboard functionality
+                # python network_dashboard.py
+                #subprocess.Popen(['start', 'cmd', '/k', 'python network_dashboard.py'], shell=True)
+
+                start_dashboard_background()
+                print("Flask dashboard started in the background.")
+                print("You can access it at http://localhost:5000")
+
+            elif choice == '6':
+                if flask_process:
+                    print("Terminating Flask dashboard...")
+                    flask_process.send_signal(signal.CTRL_BREAK_EVENT)
+                    flask_process.wait()
                 break
             else:
                 print("Invalid choice. Please try again.")

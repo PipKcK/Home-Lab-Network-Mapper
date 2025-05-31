@@ -1,0 +1,151 @@
+C:\Users\maven\Downloads\network_scanner\network_dashboard.py:57: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes
+  cursor.execute('''
+INFO:__main__:Loaded 3 devices from scan results
+INFO:__main__:Starting Network Security Dashboard...
+ * Serving Flask app 'network_dashboard'
+ * Debug mode: off
+INFO:werkzeug:WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.100:5000
+INFO:werkzeug:Press CTRL+C to quit
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:29] "GET /socket.io/?EIO=4&transport=polling&t=PSaS00f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:29] "POST /socket.io/?EIO=4&transport=polling&t=PSaS05e&sid=_8nEH7Bz9ej7IxoFAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:29] "GET /socket.io/?EIO=4&transport=polling&t=PSaS05f&sid=_8nEH7Bz9ej7IxoFAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:29] "GET /socket.io/?EIO=4&transport=polling&t=PSaS0An&sid=_8nEH7Bz9ej7IxoFAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Ek HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Ek HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:34] "POST /socket.io/?EIO=4&transport=polling&t=PSaS1Es&sid=qhJYLgyBnbGY6rCoAAAC HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "POST /socket.io/?EIO=4&transport=polling&t=PSaS1Et&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Et&sid=qhJYLgyBnbGY6rCoAAAC HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Eu&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1F3&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1F7&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FA&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FE&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FH&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FK&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FO&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FS&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FV&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1FY&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Fc&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Ff&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Fj&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Fm&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Fq&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Ft&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Fx&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1F-&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1G2&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1G5&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1G8&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GC&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GF&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GI&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GL&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GO&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GR&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GV&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1GY&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gb&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gf&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gj&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gm&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gp&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gs&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gw&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1Gz&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1H0&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1H4&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1H7&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HA&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HE&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HH&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HK&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HN&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HR&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:34] "GET /socket.io/?EIO=4&transport=polling&t=PSaS1HV&sid=fSuhBcyuPfbfxyQaAAAD HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:46] "GET /api/stats HTTP/1.1" 200 -
+C:\Users\maven\Downloads\network_scanner\network_dashboard.py:115: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes
+  cursor.execute('''
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:46] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.100 - - [30/May/2025 20:43:46] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:46] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /socket.io/?EIO=4&transport=polling&t=PSaS5dd HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "POST /socket.io/?EIO=4&transport=polling&t=PSaS5jI&sid=wamID3UaTwAxnOQyAAAG HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /socket.io/?EIO=4&transport=polling&t=PSaS5jJ&sid=wamID3UaTwAxnOQyAAAG HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:52] "GET /socket.io/?EIO=4&transport=polling&t=PSaS5oH&sid=wamID3UaTwAxnOQyAAAG HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:54] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:54] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:54] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:56] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:56] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:56] "GET /api/devices HTTP/1.1" 200 -
+INFO:network_monitor:Starting packet capture on interface: \Device\NPF_{E4D75602-5B8B-4765-8BED-488B492886BA}
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:58] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:58] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:43:58] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:00] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:00] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:00] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:02] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:02] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:02] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:04] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:04] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:04] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:06] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:06] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:06] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:08] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:08] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:08] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:10] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:10] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:10] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:12] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:12] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:12] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:14] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:14] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:14] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:16] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:16] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:16] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:18] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:18] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:18] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:20] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:20] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:20] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:22] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:22] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:22] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:24] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:24] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:24] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:26] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:26] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:26] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:29] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:29] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:29] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:31] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:31] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:31] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:33] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:33] "GET /api/alerts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:33] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:35] "GET /api/stats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:35] "GET /api/devices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/May/2025 20:44:35] "GET /api/alerts HTTP/1.1" 200 -

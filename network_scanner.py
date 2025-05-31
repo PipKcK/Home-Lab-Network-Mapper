@@ -157,7 +157,7 @@ class NetworkScanner:
         
         return self.devices
 
-    def load_known_devices(self, config_path="config.ini"):
+    def load_known_devices(self, config_path="known_devices.ini"):
         config = configparser.ConfigParser()
         config.read(config_path)
         known_devices = {}

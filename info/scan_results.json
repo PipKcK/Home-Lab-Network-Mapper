@@ -2,13 +2,13 @@
   "scan_info": {
     "network_range": "192.168.0.0/24",
     "router_ip": "192.168.0.1",
-    "scan_time": "2025-05-29 17:01:44",
+    "scan_time": "2025-05-30 20:43:15",
     "device_count": 3
   },
   "devices": [
     {
       "ip": "192.168.0.100",
-      "mac": "",
+      "mac": "f8:9e:94:ad:4a:85",
       "hostname": "MavenPCX",
       "device_type": "PC",
       "os": "Windows",
